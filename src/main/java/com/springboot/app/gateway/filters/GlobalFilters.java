@@ -22,7 +22,7 @@ public class GlobalFilters implements GlobalFilter{
 		
 		return chain.filter(exchange).then(Mono.fromRunnable(() -> {
 			logger.info("ejecutando filtro post");
-			exchange.getResponse().getHeaders().setContentType(MediaType.APPLICATION_XML);
+			//exchange.getResponse().getHeaders().setContentType(MediaType.APPLICATION_XML);
 		}));
 	}
 
