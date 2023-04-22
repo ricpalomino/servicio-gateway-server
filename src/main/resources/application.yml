@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: servicio-peliculas
+        uri: lb://servicio-peliculas
+        predicates:
+          - Path=/api/peliculas/**
+        filters:
+          - StripPrefix=2
+      - id: servicio-novedades
+        uri: lb://servicio-novedades
+        predicates:
+          - Path=/api/novedades/**
+        filters:
+          - StripPrefix=2      
+         
