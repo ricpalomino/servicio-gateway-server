@@ -13,5 +13,11 @@ spring:
         predicates:
           - Path=/api/novedades/**
         filters:
+          - StripPrefix=2
+      - id: servicio-actores
+        uri: lb://servicio-actores
+        predicates:
+          - Path=/api/actores/**
+        filters:
           - StripPrefix=2      
          
